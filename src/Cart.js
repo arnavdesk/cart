@@ -26,6 +26,13 @@ class Cart extends React.Component {
                 img: '',
                 id:3
             },
+            {
+                price: 9,
+                title: "Mop",
+                qty: 1,
+                img: '',
+                id:3
+            },
         ] }
     }
     render() {
