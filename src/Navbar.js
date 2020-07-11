@@ -5,6 +5,7 @@ const Navbar = (props) => {
     return (
 
         <div style={styles.navbar}>
+            <img src="logo192.png" style={{height:"50px",width:"50px", marginLeft:"10px"}}></img>
             <h1 style={styles.brandLogo}>NinjaKart</h1>
             <div style={styles.cartIconContainer}>
                 <img style={styles.cartIcon} src="https://image.flaticon.com/icons/svg/3081/3081822.svg" alt="cartIcon"></img>
@@ -18,7 +19,7 @@ const styles = {
     brandLogo:{
         fontWeight:"500",
         fontFamily:"helvetica",
-        margin:"5px 20px"
+        margin:"5px 10px"
     },
     navbar: {
         display: "flex",
