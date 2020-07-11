@@ -9,34 +9,34 @@ class App extends React.Component {
     this.state = {
       products: [
         {
-          price: 999,
+          price: 56999,
           title: "Phone",
           qty: 1,
-          img: '',
+          img: 'https://www.gizmochina.com/wp-content/uploads/2019/09/Apple-iPhone-11-1.jpg',
           id: 1,
 
         },
         {
-          price: 99,
+          price: 33999,
           title: "Watch",
-          qty: 10,
-          img: '',
+          qty: 1,
+          img: 'https://assets.croma.com/medias/sys_master/images/images/hda/h37/8869088690206/221272_pjpeg.jpg',
           id: 2,
 
         },
         {
-          price: 99999,
+          price: 89999,
           title: "Laptop",
           qty: 1,
-          img: '',
+          img: 'https://images-na.ssl-images-amazon.com/images/I/71L2iBSyyOL._SX466_.jpg',
           id: 3,
 
         },
         {
-          price: 9,
+          price: 900,
           title: "Mop",
           qty: 1,
-          img: '',
+          img: 'https://images-na.ssl-images-amazon.com/images/I/71vYyIGSqLL._SL1500_.jpg',
           id: 4,
 
         },
@@ -65,24 +65,32 @@ class App extends React.Component {
     });
   }
 
-  calculateQuantity(){
-    let sum=0;
+  getCartCount() {
+    let sum = 0;
     for (const iterator of this.state.products) {
-      sum+=iterator.qty;
+      sum += iterator.qty;
+    }
+    return sum;
+  }
+
+  getTotalPrice(){
+    let sum = 0;
+    for (const iterator of this.state.products) {
+      sum += iterator.qty*iterator.price;
     }
     return sum;
   }
 
   render() {
-    let cartQ =0 ;
-    cartQ = this.calculateQuantity();
+    let cartQ = 0;
     return (
       <div className="App">
-        <Navbar cartQuant = {cartQ}/>
+        <Navbar cartQuant={this.getCartCount()} />
         <Cart products={this.state.products}
           increaseQuantity={this.increaseQuantity}
           decreaseQuantity={this.decreaseQuantity}
           deleteProduct={this.deleteProduct} />
+        <div style={{fontSize:"20px", padding:"20px"}}>Total : {this.getTotalPrice()}</div>
       </div>
     );
   }
