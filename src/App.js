@@ -82,7 +82,6 @@ class App extends React.Component {
   }
 
   render() {
-    let cartQ = 0;
     return (
       <div className="App">
         <Navbar cartQuant={this.getCartCount()} />
