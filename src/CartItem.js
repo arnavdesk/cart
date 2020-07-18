@@ -17,6 +17,8 @@ const CartItem = (props) => {
                 <div style={{ fontSize: 18, color: '#777', marginTop: 5 }} >
                     Qty : {product.qty}
                 </div>
+            </div>
+            <div className="end-block">
                 <div className="cart-item-actions">
                     {/* buttons */}
                     <img

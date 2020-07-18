@@ -2,7 +2,6 @@ import React from 'react';
 import Cart from "./Cart";
 import Navbar from "./Navbar";
 
-
 class App extends React.Component {
   constructor() {
     super()
@@ -89,7 +88,7 @@ class App extends React.Component {
           increaseQuantity={this.increaseQuantity}
           decreaseQuantity={this.decreaseQuantity}
           deleteProduct={this.deleteProduct} />
-        <div style={{fontSize:"20px", padding:"20px"}}>Total : {this.getTotalPrice()}</div>
+        <div style={{fontSize:"20px", padding:"20px", textAlign:"right"}}>Total : {this.getTotalPrice()}</div>
       </div>
     );
   }
